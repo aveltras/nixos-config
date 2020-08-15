@@ -66,22 +66,6 @@
         "type": "github"
       }
     },
-    "master_2": {
-      "locked": {
-        "lastModified": 1597486438,
-        "narHash": "sha256-p3ZZ7iuBhZW30RFhY0NqcvaSAsR1ssncbdSq0oXnD5A=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "6d0a85fe528e020eb7d8eb78d33ee87055c01c74",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "master",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1591748508,
@@ -94,22 +78,6 @@
       "original": {
         "id": "nixpkgs",
         "type": "indirect"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1597482472,
-        "narHash": "sha256-Cq4QYgWSpXr2OSTJDR+ZkZzqQBbHc3TyKWzmrYlE2TE=",
-        "owner": "colemickens",
-        "repo": "nixpkgs",
-        "rev": "5c463ebff3ff7a2554aff704cc32d6edecc70636",
-        "type": "github"
-      },
-      "original": {
-        "owner": "colemickens",
-        "ref": "cmpkgs",
-        "repo": "nixpkgs",
-        "type": "github"
       }
     },
     "root": {
@@ -157,8 +125,12 @@
       "inputs": {
         "cachixpkgs": "cachixpkgs",
         "flake-utils": "flake-utils",
-        "master": "master_2",
-        "nixpkgs": "nixpkgs_2"
+        "master": [
+          "master"
+        ],
+        "nixpkgs": [
+          "master"
+        ]
       },
       "locked": {
         "lastModified": 1597489550,

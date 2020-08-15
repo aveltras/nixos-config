@@ -1,10 +1,17 @@
 {
   inputs = {
-    home = { url = "github:rycee/home-manager/bqv-flakes"; };
     master = { url = "github:nixos/nixpkgs/master"; };
     stable = { url = "github:nixos/nixpkgs/nixos-20.03"; };
     unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    wayland = { url = "github:colemickens/nixpkgs-wayland/master"; };
+    home = { url = "github:rycee/home-manager/bqv-flakes"; };
+
+    wayland = {
+      url = "github:colemickens/nixpkgs-wayland/master";
+      inputs = {
+        nixpkgs.follows = "master";
+        master.follows = "master";
+      };
+    };
   };
 
   outputs = inputs: {
