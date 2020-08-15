@@ -3,6 +3,7 @@
 {
   imports =
     [ inputs.unstable.nixosModules.notDetected
+      ../../profiles/sway.nix
     ];
 
   system.stateVersion = "20.03";
