@@ -4,6 +4,7 @@
   imports =
     [ ./core.nix
       inputs.home.nixosModules.home-manager
+      ../mixins/alacritty.nix
     ];
   
   nixpkgs.overlays = [ inputs.wayland.overlay ];
@@ -31,7 +32,7 @@
     '';
 
     systemPackages = with pkgs; [
-      alacritty
+      # alacritty
       blender
       chromium
       direnv
