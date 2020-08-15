@@ -36,15 +36,15 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1591751635,
-        "narHash": "sha256-KgGtyFlkI/fsp+j8VEgJ/ynY9B91aX35Xp04HlDLRTo=",
-        "owner": "rycee",
+        "lastModified": 1597513261,
+        "narHash": "sha256-xqc/0cMTjTMnWpgWrGUsC+HLyUdAPCHLmY/SGKxeUAs=",
+        "owner": "aveltras",
         "repo": "home-manager",
-        "rev": "b3fee796fcd5531693d9b84ece76ad6836bb1cfa",
+        "rev": "9dcbdc647b10be3734bce06252109af2698f6ab9",
         "type": "github"
       },
       "original": {
-        "owner": "rycee",
+        "owner": "aveltras",
         "ref": "bqv-flakes",
         "repo": "home-manager",
         "type": "github"

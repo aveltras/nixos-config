@@ -6,6 +6,8 @@
       inputs.home.nixosModules.home-manager
       ../mixins/alacritty.nix
       ../mixins/git.nix
+      ../mixins/sway.nix
+      ../mixins/waybar.nix
     ];
   
   nixpkgs.overlays = [ inputs.wayland.overlay ];
@@ -59,19 +61,19 @@
   
   programs = {
     light.enable = true;
-    sway = {
-      enable = true;      
-      extraPackages = with pkgs; [
-        grim
-        slurp
-        swaybg
-        swaylock
-        waybar
-        wldash
-        xwayland
-      ];
-      wrapperFeatures.gtk = true;
-    };
+    # sway = {
+    #   enable = true;      
+    #   extraPackages = with pkgs; [
+    #     grim
+    #     slurp
+    #     swaybg
+    #     swaylock
+    #     waybar
+    #     wldash
+    #     xwayland
+    #   ];
+    #   wrapperFeatures.gtk = true;
+    # };
   };
 
   fonts = {

@@ -3,7 +3,7 @@
     master = { url = "github:nixos/nixpkgs/master"; };
     stable = { url = "github:nixos/nixpkgs/nixos-20.03"; };
     unstable = { url = "github:nixos/nixpkgs/nixos-unstable"; };
-    home = { url = "github:rycee/home-manager/bqv-flakes"; };
+    home = { url = "github:aveltras/home-manager/bqv-flakes"; };
 
     wayland = {
       url = "github:colemickens/nixpkgs-wayland/master";
