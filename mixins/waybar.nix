@@ -19,8 +19,8 @@
     	      "device" = "intel_backlight";
     	      "format" = "{icon} {percent}%";
     	      "format-icons" = [ "" "" ];
-	          "on-scroll-down" = "light -U 1";
-	          "on-scroll-up" = "light -A 1";
+	          "on-scroll-down" = "${pkgs.light}/bin/light -U 1";
+	          "on-scroll-up" = "${pkgs.light}/bin/light -A 1";
           };
           "battery" = {
             "format" = "{icon} {capacity}%";
@@ -39,7 +39,7 @@
     	      "format-disconnected" = "";
 	          "tooltip" = false;
     	      "max-length" = 50;
-	          "on-click" = "alacritty -e nmtui";
+	          "on-click" = "${pkgs.alacritty}/bin/alacritty -e nmtui";
           };
           "pulseaudio" = {
     	      "format" = "{icon} {volume}%";
@@ -49,9 +49,9 @@
 	            "default" = [ "" "" ];
 	          };
 	          "tooltip" = false;
-    	      "on-click" = "pavucontrol";
-	          "on-scroll-up" = "pactl set-sink-volume $(pactl list short sinks | awk '{ if ($7 == \"RUNNING\") print $1 }') +1%";
-	          "on-scroll-down" = "pactl set-sink-volume $(pactl list short sinks | awk '{ if ($7 == \"RUNNING\") print $1 }') -1%";
+    	      "on-click" = "${pkgs.pavucontrol}/bin/pavucontrol";
+	          "on-scroll-up" = "${pkgs.pulsemixer}/bin/pulsemixer --change-volume +1";
+	          "on-scroll-down" = "${pkgs.pulsemixer}/bin/pulsemixer --change-volume -1";
           };
           "tray" = {
             "icon-size" = 21;
