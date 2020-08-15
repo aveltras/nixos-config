@@ -61,19 +61,6 @@
   
   programs = {
     light.enable = true;
-    # sway = {
-    #   enable = true;      
-    #   extraPackages = with pkgs; [
-    #     grim
-    #     slurp
-    #     swaybg
-    #     swaylock
-    #     waybar
-    #     wldash
-    #     xwayland
-    #   ];
-    #   wrapperFeatures.gtk = true;
-    # };
   };
 
   fonts = {
@@ -88,10 +75,5 @@
   
   sound.enable = true;
   
-  services = {
-    redshift = {
-      enable = true;
-      package = pkgs.redshift-wlr;
-    };
-  };
+  services.redshift.enable = true;
 }

@@ -14,6 +14,8 @@
     ];
   };
 
+  services.redshift.package = pkgs.redshift-wlr;
+  
   home-manager.users.${username} = { pkgs, ... }: {
          
     wayland.windowManager.sway = {
@@ -75,7 +77,7 @@
           # General
           "${modifier}+Return" = "exec ${terminal}";
           "${modifier}+Shift+q" = "kill";
-          "${modifier}+d" = "wldash";
+          "${modifier}+d" = "exec wldash";
           "${modifier}+Shift+c" = "reload";
           "${modifier}+Shift+e" = ''exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' '';
           "${modifier}+l" = ''exec swaylock -f -i ~/.background-image'';
