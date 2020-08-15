@@ -1,6 +1,7 @@
 { pkgs, config, username, ... }:
 
 {
+  programs.light.enable = true;
   programs.sway.enable = true;
   
   services.redshift.package = pkgs.redshift-wlr;

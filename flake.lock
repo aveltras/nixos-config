@@ -36,11 +36,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1597513261,
-        "narHash": "sha256-xqc/0cMTjTMnWpgWrGUsC+HLyUdAPCHLmY/SGKxeUAs=",
+        "lastModified": 1597521378,
+        "narHash": "sha256-cSsjYRaqFI1LM0LqJdckS+jhbR9Dswiem5JjO8YoO98=",
         "owner": "aveltras",
         "repo": "home-manager",
-        "rev": "9dcbdc647b10be3734bce06252109af2698f6ab9",
+        "rev": "a861b4661b33a334b280671a504485302ae11f62",
         "type": "github"
       },
       "original": {

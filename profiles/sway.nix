@@ -23,12 +23,19 @@
       programs = {
         home-manager.enable = true;
         emacs.enable = true;
+        bash.enable = true;
+        direnv = {
+          enable = true;
+          enableBashIntegration = true;
+          enableNixDirenvIntegration = true;
+        };
       };
 
       home.file = {
         ".emacs.d/init.el".source = ./../dotfiles/.emacs.d/init.el;
-        "wldash/config.yaml".source = ./../dotfiles/wldash/config.yaml;
       };
+
+      xdg.configFile."wldash/config.yaml".source = ./../dotfiles/wldash/config.yaml;
     };
   };
   
@@ -42,7 +49,6 @@
     systemPackages = with pkgs; [
       blender
       chromium
-      direnv
       docker-compose
       # emacs
       firefox
@@ -53,9 +59,8 @@
       gotop
       inkscape
       # morph
-      nix-direnv
       ntfs3g
-      playerctl
+      # playerctl
       # python3 # treemacs
       slack
       spotify
