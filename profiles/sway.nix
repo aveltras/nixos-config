@@ -5,6 +5,7 @@
     [ ./core.nix
       inputs.home.nixosModules.home-manager
       ../mixins/alacritty.nix
+      ../mixins/git.nix
     ];
   
   nixpkgs.overlays = [ inputs.wayland.overlay ];
@@ -32,7 +33,6 @@
     '';
 
     systemPackages = with pkgs; [
-      # alacritty
       blender
       chromium
       direnv
@@ -40,13 +40,11 @@
       emacs
       firefox
       gimp
-      git
+      # git
       gnupg
       godot
       gotop
       inkscape
-      # insomnia
-      # kubectl
       # morph
       nix-direnv
       ntfs3g
