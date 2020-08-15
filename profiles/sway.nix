@@ -26,7 +26,8 @@
       };
 
       home.file = {
-        ".emacs.d/init.el".source = ./../dotfiles/init.el;
+        ".emacs.d/init.el".source = ./../dotfiles/.emacs.d/init.el;
+        "wldash/config.yaml".source = ./../dotfiles/wldash/config.yaml;
       };
     };
   };
