@@ -3,6 +3,7 @@
 {
   imports =
     [ ./core.nix
+      inputs.home.nixosModules.home-manager
     ];
   
   nixpkgs.overlays = [ inputs.wayland.overlay ];
@@ -10,6 +11,16 @@
   nix = {
     binaryCaches = [ "https://nixpkgs-wayland.cachix.org" ];
     binaryCachePublicKeys = [ "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA=" ];
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    users.romain = { pkgs, ... }: {
+      programs = {
+        home-manager.enable = true;
+        htop.enable = true;
+      };
+    };
   };
   
   environment = {
