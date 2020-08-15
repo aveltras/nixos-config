@@ -53,7 +53,7 @@
   };
 
   networking = {
-    hostName = "clevoN141zu";
+    hostName = "clevo-n141zu";
     networkmanager.enable = true;
     nameservers = [ "1.1.1.1" ];
   };
@@ -62,45 +62,3 @@
     fstrim.enable = true;
   };
 }
-
-
-  # nixpkgs = {
-  #   config = {
-  #     allowUnfree = true;
-  #     allowBroken = true;
-  #   };
-
-  #   overlays = [
-  #     (import (fetchTarball https://github.com/colemickens/nixpkgs-wayland/archive/c829193decef17305c5f4cefe99539d8a023e5e7.tar.gz))
-  #   ];
-  # };
-
-  # nix = {
-
-  #   package = pkgs.nixUnstable;
-
-  #   binaryCaches = [
-  #     "https://cache.nixos.org/"
-  #     "https://nixcache.reflex-frp.org"
-  #     "https://nixpkgs-wayland.cachix.org"
-  #     "https://ghcide-nix.cachix.org/"
-  #     "https://iohk.cachix.org/"
-  #     "https://miso-haskell.cachix.org/"
-  #   ];
-    
-  #   binaryCachePublicKeys = [
-  #     "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
-  #     "binarycache.local:IcDIAd14oLIf7A0WcKIlHOSf22HoY2MH4T/5+2av0sA="
-  #     "nixpkgs-wayland.cachix.org-1:3lwxaILxMRkVhehr5StQprHdEo4IrE8sRho9R9HOLYA="
-  #     "ghcide-nix.cachix.org-1:ibAY5FD+XWLzbLr8fxK6n8fL9zZe7jS+gYeyxyWYK5c="
-  #     "iohk.cachix.org-1:DpRUyj7h7V830dp/i6Nti+NEO2/nhblbov/8MW7Rqoo="
-  #     "miso-haskell.cachix.org-1:6N2DooyFlZOHUfJtAx1Q09H0P5XXYzoxxQYiwn6W1e8="
-  #   ];
-
-  #   extraOptions = ''
-  #     experimental-features = nix-command flakes
-  #     keep-outputs = true
-  #     keep-derivations = true
-  #   '';
-
-  # };

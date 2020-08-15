@@ -18,6 +18,33 @@
     	  exec sway
       fi
     '';
+
+    systemPackages = with pkgs; [
+      alacritty
+      blender
+      chromium
+      direnv
+      docker-compose
+      emacs
+      firefox
+      gimp
+      git
+      gnupg
+      godot
+      gotop
+      inkscape
+      # insomnia
+      # kubectl
+      # morph
+      nix-direnv
+      ntfs3g
+      playerctl
+      # python3 # treemacs
+      slack
+      spotify
+      steam
+      yadm
+    ];
   };
   
   programs = {
@@ -46,7 +73,6 @@
       jost
     ];
   };
-
   
   sound.enable = true;
   
