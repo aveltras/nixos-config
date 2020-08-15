@@ -22,7 +22,11 @@
     users.${username} = { pkgs, ... }: {
       programs = {
         home-manager.enable = true;
-        htop.enable = true;
+        emacs.enable = true;
+      };
+
+      home.file = {
+        ".emacs.d/init.el".source = ./../dotfiles/init.el;
       };
     };
   };
@@ -39,7 +43,7 @@
       chromium
       direnv
       docker-compose
-      emacs
+      # emacs
       firefox
       gimp
       # git
