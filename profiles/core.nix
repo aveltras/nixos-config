@@ -12,14 +12,31 @@
     keyMap = "fr";
   };
 
+  documentation.nixos.enable = false;
+  
   time.timeZone = "Europe/Paris";
   
   location = {
     latitude = 45.75;
     longitude = 4.85;
   };
+
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
   
-  nix.trustedUsers = [ "romain" ];
+  nix = {
+    package = pkgs.nixUnstable;
+    trustedUsers = [ "romain" ];
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      keep-outputs = true
+      keep-derivations = true
+    '';
+  };
   
   users.users.romain = {
     isNormalUser = true;

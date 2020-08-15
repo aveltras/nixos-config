@@ -52,8 +52,12 @@
     };
   };
 
-  networking.hostName = "clevoN141zu";
-  
+  networking = {
+    hostName = "clevoN141zu";
+    networkmanager.enable = true;
+    nameservers = [ "1.1.1.1" ];
+  };
+
   services = {
     fstrim.enable = true;
   };

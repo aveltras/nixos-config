@@ -21,6 +21,7 @@
   };
   
   programs = {
+    light.enable = true;
     sway = {
       enable = true;      
       extraPackages = with pkgs; [
@@ -36,6 +37,19 @@
     };
   };
 
+  fonts = {
+    fontconfig.enable = true;
+    fonts = with pkgs; [
+      fantasque-sans-mono
+      font-awesome_5
+      iosevka-bin
+      jost
+    ];
+  };
+
+  
+  sound.enable = true;
+  
   services = {
     redshift = {
       enable = true;
