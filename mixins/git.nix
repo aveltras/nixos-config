@@ -1,11 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, username, realname, email, ... }:
 
 {
-  home-manager.users.romain = { pkgs, ... }: {
+  home-manager.users.${username} = { pkgs, ... }: {
     programs.git = {
       enable = true;
-      userEmail = "romain.viallard@outlook.fr";
-      userName = "Romain Viallard";
+      userEmail = email;
+      userName = realname;
     };
   };
 }

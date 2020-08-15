@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, username, realname, inputs, ... }:
 
 {
   boot = {
@@ -41,7 +41,7 @@
   
   nix = {
     package = pkgs.nixUnstable;
-    trustedUsers = [ "romain" ];
+    trustedUsers = [ username ];
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
@@ -55,10 +55,10 @@
     mutableUsers = false;
     users = {
       root.hashedPassword = "$6$o3cXYMlcT.M.1o6P$3UhleR/595sDmVSei0rx01KBlwF3NjoulvjA1KHZ5KKABns0Bi5c8n35L1LDDUMFfWaGemD/GtFw/y.f.8qMX.";
-      romain = {
+      ${username} = {
         isNormalUser = true;
-        home = "/home/romain";
-        description = "Romain Viallard";
+        home = "/home/${username}";
+        description = realname;
         extraGroups = [ "wheel" "audio" "video" "networkmanager" ];
         openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEjU6skuH49zxLEg2kMA5Y5meV1xGYZ/q+FuKPqDfZiq" ];
         hashedPassword = "$6$o3cXYMlcT.M.1o6P$3UhleR/595sDmVSei0rx01KBlwF3NjoulvjA1KHZ5KKABns0Bi5c8n35L1LDDUMFfWaGemD/GtFw/y.f.8qMX.";

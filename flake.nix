@@ -20,7 +20,12 @@
       clevo-n141zu = inputs.unstable.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./machines/clevo-n141zu/configuration.nix ];
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          username = "romain";
+          realname = "Romain Viallard";
+          email = "romain.viallard@outlook.fr";
+          inherit inputs;
+        };
       };
     };
 

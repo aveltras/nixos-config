@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, username, inputs, ... }:
 
 {
   imports =
@@ -17,7 +17,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    users.romain = { pkgs, ... }: {
+    users.${username} = { pkgs, ... }: {
       programs = {
         home-manager.enable = true;
         htop.enable = true;

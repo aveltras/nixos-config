@@ -1,7 +1,7 @@
-{ pkgs, config, ... }:
+{ pkgs, config, username, ... }:
 
 {
-  home-manager.users.romain = { pkgs, ... }: {
+  home-manager.users.${username} = { pkgs, ... }: {
     programs.alacritty = {
       enable = true;
       settings = {
