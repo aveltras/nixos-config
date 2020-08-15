@@ -64,10 +64,6 @@
     ];
   };
   
-  programs = {
-    light.enable = true;
-  };
-
   fonts = {
     fontconfig.enable = true;
     fonts = with pkgs; [

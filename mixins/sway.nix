@@ -1,19 +1,8 @@
 { pkgs, config, username, ... }:
 
 {
-  programs.sway = {
-    enable = true;
-    extraPackages = with pkgs; [
-      grim
-      slurp
-      swaybg
-      swaylock
-      waybar
-      wldash
-      xwayland
-    ];
-  };
-
+  programs.sway.enable = true;
+  
   services.redshift.package = pkgs.redshift-wlr;
   
   home-manager.users.${username} = { pkgs, ... }: {
@@ -62,29 +51,33 @@
           "3" = [{ app_id="Alacritty"; }];
         };
 
+        startup = [
+          { command = "${pkgs.light}/bin/light -S 1"; }
+        ];
+        
         keybindings = {
 
           # Fn Keys
-          "XF86AudioRaiseVolume" = ''exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | awk '{ if ($7 == "RUNNING") print $1 }') +1%'';
-          "XF86AudioLowerVolume" = ''exec --no-startup-id pactl set-sink-volume $(pactl list short sinks | awk '{ if ($7 == "RUNNING") print $1 }') -1%'';
-          "XF86AudioMute" = ''exec --no-startup-id pactl set-sink-mute $(pactl list short sinks | awk '{ if ($7 == "RUNNING") print $1 }') toggle'';
-          "XF86MonBrightnessDown" = ''exec --no-startup-id light -U 1'';
-          "XF86MonBrightnessUp" = ''exec --no-startup-id light -A 1'';
-          "XF86AudioPlay" = ''exec playerctl play-pause'';
-          "${modifier}+Shift+Tab" = ''exec playerctl previous'';
-          "${modifier}+Tab" = ''exec playerctl next'';
+          "${modifier}+Ctrl+Up" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +1";
+          "${modifier}+Ctrl+Down" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -1";
+          "XF86AudioMute" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --toggle-mute";
+          "${modifier}+Ctrl+Left" = "exec --no-startup-id ${pkgs.light}/bin/light -U 1";
+          "${modifier}+Ctrl+Right" = "exec --no-startup-id ${pkgs.light}/bin/light -A 1";
+          "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
+          "${modifier}+Shift+Tab" = "exec ${pkgs.playerctl}/bin/playerctl previous";
+          "${modifier}+Tab" = "exec ${pkgs.playerctl}/bin/playerctl next";
 
           # General
           "${modifier}+Return" = "exec ${terminal}";
           "${modifier}+Shift+q" = "kill";
-          "${modifier}+d" = "exec wldash";
+          "${modifier}+d" = "exec ${pkgs.wldash}/bin/wldash";
           "${modifier}+Shift+c" = "reload";
           "${modifier}+Shift+e" = ''exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' '';
-          "${modifier}+l" = ''exec swaylock -f -i ~/.background-image'';
+          "${modifier}+l" = ''exec ${pkgs.swaylock}/bin/swaylock -f -i ~/.background-image'';
 
           # Screenshots
-          "print" = "exec mkdir -p ~/Screenshots && grim ~/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')"; # Fullscreen
-          "${modifier}+print" = ''exec mkdir -p ~/Screenshots && grim -g "$(slurp)" ~/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')''; # Region
+          "print" = "exec mkdir -p ~/Screenshots && ${pkgs.grim}/bin/grim ~/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')"; # Fullscreen
+          "${modifier}+print" = ''exec mkdir -p ~/Screenshots && ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" ~/Screenshots/$(date +'%Y-%m-%d-%H%M%S_grim.png')''; # Region
 
           # Move focus
           "${modifier}+Left" = "focus left";
@@ -146,9 +139,6 @@
   };
 }
 
-# include @sysconfdir@/sway/config.d/*
-# exec systemctl --user start graphical-session.target
-
 # set $gnome-schema org.gnome.desktop.interface
 
 # exec_always {
@@ -156,6 +146,4 @@
 #     gsettings set $gnome-schema icon-theme 'Yaru-dark'
 #     gsettings set $gnome-schema cursor-theme 'Yaru-dark'
 # }
-
-# exec --no-startup-id light -S 1
 
