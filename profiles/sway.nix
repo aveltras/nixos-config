@@ -49,23 +49,16 @@
     systemPackages = with pkgs; [
       blender
       chromium
-      docker-compose
-      # emacs
       firefox
       gimp
-      # git
       gnupg
       godot
       gotop
       inkscape
       # morph
       ntfs3g
-      # playerctl
-      # python3 # treemacs
       slack
       spotify
-      steam
-      yadm
     ];
   };
   
