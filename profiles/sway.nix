@@ -49,6 +49,7 @@
     systemPackages = with pkgs; [
       blender
       chromium
+      docker-compose
       firefox
       gimp
       gnupg
@@ -75,4 +76,8 @@
   sound.enable = true;
   
   services.redshift.enable = true;
+
+  users.users.${username}.extraGroups = [ "docker" ];
+  virtualisation.docker.enable = true;
+  virtualisation.docker.liveRestore = false;
 }
