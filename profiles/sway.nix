@@ -56,6 +56,7 @@
       godot
       gotop
       inkscape
+      krita
       # morph
       ntfs3g
       slack
