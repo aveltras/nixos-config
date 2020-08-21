@@ -27,10 +27,21 @@
           inherit inputs;
         };
       };
+      desktop-amd = inputs.unstable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./machines/desktop-amd/configuration.nix ];
+        specialArgs = {
+          username = "romain";
+          realname = "Romain Viallard";
+          email = "romain.viallard@outlook.fr";
+          inherit inputs;
+        };
+      };
     };
 
     machines = {
       clevo-n141zu = inputs.self.nixosConfigurations.clevo-n141zu.config.system.build.toplevel;
+      desktop-amd = inputs.self.nixosConfigurations.desktop-amd.config.system.build.toplevel;
     };
     
   };
