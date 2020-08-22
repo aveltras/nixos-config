@@ -4,6 +4,7 @@
   imports =
     [ inputs.unstable.nixosModules.notDetected
       ../../profiles/sway.nix
+      ../../mixins/steam.nix
     ];
 
   system.stateVersion = "20.03";

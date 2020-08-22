@@ -61,6 +61,7 @@
       ntfs3g
       slack
       spotify
+      steam-run
     ];
   };
   
