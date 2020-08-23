@@ -76,6 +76,7 @@
           "${modifier}+Return" = "exec ${terminal}";
           "${modifier}+Shift+q" = "kill";
           "${modifier}+d" = "exec ${pkgs.wldash}/bin/wldash";
+          "${modifier}+n" = "exec ${pkgs.gnome3.nautilus}/bin/nautilus";
           "${modifier}+Shift+c" = "reload";
           "${modifier}+Shift+e" = ''exec swaynag -t warning -m 'Do you really want to exit sway?' -b 'Yes, exit sway' 'swaymsg exit' '';
           "${modifier}+l" = ''exec ${pkgs.swaylock}/bin/swaylock -f -i ~/.background-image'';
