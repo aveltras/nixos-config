@@ -60,10 +60,14 @@
 
           # Fn Keys
           "${modifier}+Ctrl+Up" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +1";
+          "XF86AudioRaiseVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +1";
           "${modifier}+Ctrl+Down" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -1";
+          "XF86AudioLowerVolume" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -1";
           "XF86AudioMute" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --toggle-mute";
           "${modifier}+Ctrl+Left" = "exec --no-startup-id ${pkgs.light}/bin/light -U 0.1";
+          "XF86MonBrightnessDown" = "exec --no-startup-id ${pkgs.light}/bin/light -U 0.1";
           "${modifier}+Ctrl+Right" = "exec --no-startup-id ${pkgs.light}/bin/light -A 0.1";
+          "XF86MonBrightnessUp" = "exec --no-startup-id ${pkgs.light}/bin/light -A 0.1";
           "XF86AudioPlay" = "exec ${pkgs.playerctl}/bin/playerctl play-pause";
           "${modifier}+Shift+Tab" = "exec ${pkgs.playerctl}/bin/playerctl previous";
           "${modifier}+Tab" = "exec ${pkgs.playerctl}/bin/playerctl next";
