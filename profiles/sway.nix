@@ -47,8 +47,10 @@
     '';
 
     systemPackages = with pkgs; [
+      ardour
       blender
       chromium
+      discord
       docker-compose
       firefox
       gimp
@@ -57,7 +59,9 @@
       gotop
       inkscape
       krita
+      lmms
       # morph
+      musescore
       ntfs3g
       slack
       spotify
