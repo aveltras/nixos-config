@@ -81,7 +81,17 @@
   
   sound.enable = true;
   
-  services.redshift.enable = true;
+  services.redshift = {
+    enable = true;
+    brightness = {
+      day = "0.9";
+      night = "0.1";
+    };
+    temperature = {
+      day = 4000;
+      night = 3000;
+    };
+  };
 
   users.users.${username}.extraGroups = [ "docker" ];
   virtualisation.docker.enable = true;
